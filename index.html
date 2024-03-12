@@ -46,6 +46,22 @@
     <footer>
         <p>&copy; 2024 Mis Series Favoritas en Netflix</p>
     </footer>
+
+    <script>
+        document.getElementById('buscador').addEventListener('input', function() {
+            var input = this.value.toLowerCase();
+            var series = document.querySelectorAll('.serie');
+
+            series.forEach(function(serie) {
+                var textoSerie = serie.textContent.toLowerCase();
+                if (textoSerie.includes(input)) {
+                    serie.style.display = 'block';
+                } else {
+                    serie.style.display = 'none';
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
